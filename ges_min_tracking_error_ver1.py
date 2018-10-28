@@ -1,6 +1,6 @@
 import numpy as np
 import scipy.stats as st
-import cvxpy as cvx
+import cvxpy as cp
 import pandas as pd
 import matplotlib.pyplot as plt
 R = pd.read_csv('asset_return_data.csv', index_col=0)
@@ -12,18 +12,18 @@ BenchmarkIndex = R.dot(np.tile(1.0/N, N)) \
 MovingWindow = 96
 BackTesting = T - MovingWindow
 V_Tracking = np.zeros(BackTesting)
-Weight = cvx.Variable(N)
-Error = cvx.Variable(MovingWindow)
-TrackingError = cvx.sum_squares(Error)
+Weight = cp.Variable(N)
+Error = cp.Variable(MovingWindow)
+TrackingError = cp.sum_squares(Error)
 Asset_srT = R / np.sqrt(T)
 Index_srT = BenchmarkIndex / np.sqrt(T)
 for Month in range(0, BackTesting):
     Asset = Asset_srT.values[Month:(Month + MovingWindow), :]
     Index = Index_srT.values[Month:(Month + MovingWindow)]
-    Min_TrackingError = cvx.Problem(cvx.Minimize(TrackingError),
-                                    [Index - Asset*Weight == Error,
-                                     cvx.sum(Weight) == 1.0,
-                                     Weight >= 0.0])
+    Min_TrackingError = cp.Problem(cp.Minimize(TrackingError),
+                                   [Index - Asset*Weight == Error,
+                                    cp.sum(Weight) == 1.0,
+                                    Weight >= 0.0])
     Min_TrackingError.solve()
     V_Tracking[Month] = R.values[Month + MovingWindow, :].dot(Weight.value)
 fig1 = plt.figure(num=1, facecolor='w')

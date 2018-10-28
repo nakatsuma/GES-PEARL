@@ -1,21 +1,21 @@
 import numpy as np
-import cvxpy as cvx
+import cvxpy as cp
 import pandas as pd
 import matplotlib.pyplot as plt
 R = pd.read_csv('asset_return_data.csv', index_col=0)
 T, N = R.shape
 Mu = R.mean().values
 Return_Dev = (R - Mu).values / np.sqrt(T)
-Weight = cvx.Variable(N)
-Deviation = cvx.Variable(T)
-Target_Return = cvx.Parameter(nonneg=True)
-Risk_Semivariance = cvx.sum_squares(Deviation)
-Opt_Portfolio = cvx.Problem(cvx.Minimize(Risk_Semivariance),
-                            [Weight.T*Mu == Target_Return,
-                             cvx.sum(Weight) == 1.0,
-                             Weight >= 0.0,
-                             Deviation >= 0.0,
-                             Return_Dev*Weight + Deviation >= 0.0])
+Weight = cp.Variable(N)
+Deviation = cp.Variable(T)
+Target_Return = cp.Parameter(nonneg=True)
+Risk_Semivariance = cp.sum_squares(Deviation)
+Opt_Portfolio = cp.Problem(cp.Minimize(Risk_Semivariance),
+                           [Weight.T*Mu == Target_Return,
+                            cp.sum(Weight) == 1.0,
+                            Weight >= 0.0,
+                            Deviation >= 0.0,
+                            Return_Dev*Weight + Deviation >= 0.0])
 V_Target = np.linspace(Mu.min(), Mu.max(), num=250)
 V_Risk = np.zeros(V_Target.shape)
 for idx, Target_Return.value in enumerate(V_Target):

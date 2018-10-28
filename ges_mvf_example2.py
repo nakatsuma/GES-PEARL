@@ -1,6 +1,6 @@
 import numpy as np
 import numpy.linalg as la
-import cvxpy as cvx
+import cvxpy as cp
 import matplotlib.pyplot as plt
 Mu = np.array([1.0, 3.0, 1.5, 6.0, 4.5])
 Stdev = np.array([5.0, 10.0, 7.5, 15.0, 11.0])
@@ -16,13 +16,13 @@ A = Mu.dot(inv_Sigma).dot(iota)
 B = Mu.dot(inv_Sigma).dot(Mu)
 C = iota.dot(inv_Sigma).dot(iota)
 D = B * C - A ** 2
-Weight = cvx.Variable(Mu.shape[0])
-Target_Return = cvx.Parameter(sign='positive')
-Risk_Variance = cvx.quad_form(Weight, Sigma)
-Opt_Portfolio = cvx.Problem(cvx.Minimize(Risk_Variance),
-                            [Weight.T*Mu == Target_Return,
-                             cvx.sum_entries(Weight) == 1.0,
-                             Weight >= 0.0])
+Weight = cp.Variable(Mu.shape[0])
+Target_Return = cp.Parameter(sign='positive')
+Risk_Variance = cp.quad_form(Weight, Sigma)
+Opt_Portfolio = cp.Problem(cp.Minimize(Risk_Variance),
+                           [Weight.T*Mu == Target_Return,
+                            cp.sum_entries(Weight) == 1.0,
+                            Weight >= 0.0])
 V_Target = np.linspace(Mu.min(), Mu.max(), num=250)
 V_Risk = np.zeros(V_Target.shape)
 V_Weight = np.zeros((V_Target.shape[0], Mu.shape[0]))
