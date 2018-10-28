@@ -1,6 +1,6 @@
 import numpy as np
 import numpy.polynomial.polynomial as pol
-import numpy.linalg as lin
+import numpy.linalg as la
 import matplotlib.pyplot as plt
 
 
@@ -31,7 +31,7 @@ Yield = np.array([Bond_Yield(Bond[idx,0], Bond[idx,1], Bond[idx,2], F)
 P = Bond[:,0]
 C = F * np.identity(Bond.shape[0]) \
     + np.tril(np.transpose(np.tile(0.01 * Bond[:, 2] * F, (Bond.shape[0], 1))))
-V = lin.solve(C, P)
+V = la.solve(C, P)
 ZeroRate = (np.power(1.0 / V, 1.0 / Bond[:, 1]) - 1.0) * 100
 fig1 = plt.figure(num=1, facecolor='w')
 plt.plot(Bond[:,1], ZeroRate, 'b-')

@@ -1,6 +1,6 @@
 import numpy as np
 import numpy.polynomial.polynomial as pol
-import numpy.linalg as lin
+import numpy.linalg as la
 import matplotlib.pyplot as plt
 
 def Bond_Yield(Price, Maturity, CouponRate, FaceValue):
@@ -50,7 +50,7 @@ Duration = np.array([Bond_Duration(Yield[t], Bond[t, 0], Bond[t, 1], F) for t in
 Convexity = np.array([Bond_Convexity(Yield[t], Bond[t, 0], Bond[t, 1], F) for t in range(Bond.shape[0])])
 P = Bond[:,2]
 C = F * np.identity(Bond.shape[0]) + np.tril(np.transpose(np.tile(0.01 * Bond[:, 1] * F, (Bond.shape[0], 1))))
-V = lin.solve(C, P)
+V = la.solve(C, P)
 ZeroRate = (np.power(1.0 / V, 1.0 / Bond[:, 0]) - 1.0) * 100
 fig1 = plt.figure(num=1, facecolor='w')
 plt.plot(Bond[:,0], ZeroRate, 'b-')
