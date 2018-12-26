@@ -11,7 +11,7 @@ T, N = R.shape
 StockList = R.columns
 Coefs = pd.DataFrame([la.lstsq(np.vstack((np.ones(T), Y)).T, R[Stock])[0] \
                      for Stock in StockList],
-                     index=StockList, columns=['Alpha','Beta'])
+                     index=StockList, columns=['$\\alpha$','$\\beta$'])
 fig, ax = plt.subplots(N, 2, sharex='col', facecolor='w')
 ax[0, 0].set_title('Time Series Plot')
 ax[0, 1].set_title('Scatter Plot')
