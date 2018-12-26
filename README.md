@@ -7,6 +7,7 @@ Teruo Nakatsuma (Faculty of Economics, Keio University, Japan)
 | file name | description |
 |:-------------------------------|:------------------------------------------|
 | asset_return_data.csv          | simulated asset returns                   |
+| capm.csv                       | market capitalization data                |
 | ges_ad_portfolio_ver1.py       | mean absolute deviation portfolio         |
 | ges_ad_portfolio.py            | compatible with old CVXPY                 |
 | ges_asset_return_simulation.py | simulation of asset returns               |
@@ -14,6 +15,7 @@ Teruo Nakatsuma (Faculty of Economics, Keio University, Japan)
 | ges_bond_duration_convexity.py | duration and convexity of bond            |
 | ges_bond_yield_curve.py        | yield curve of bond                       |
 | ges_bond_yield_price.py        | price-yield relationship                  |
+| ges_capm.py                    | CAPM beta estimation                      |
 | ges_es_portfolio_ver1.py       | expected shortfall portfolio              |
 | ges_es_portfolio.py            | compatible with old CVXPY                 |
 | ges_interest.py                | interest rate                             |
