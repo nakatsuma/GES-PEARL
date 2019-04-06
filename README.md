@@ -16,7 +16,7 @@ I strongly recommend using [Anaconda](https://www.anaconda.com/). It can install
 
 2. Download an Anaconda installer (Windows, macOS or Linux) from [here](https://www.anaconda.com/distribution/). Choose a Python 3 installer.
 
-3. Doubleclick the installer and install Anaconda as usual.
+3. Doubleclick the installer and keep clicking `Continue`, `Next` or `Ok`.
 
 ### Step 2: Creating an environment
 
