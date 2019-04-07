@@ -95,8 +95,6 @@ Your default browser will pop up. Click the `Python (Finance)` button to create 
 | ges_es_portfolio_ver1.py       | expected shortfall portfolio              |
 | ges_es_portfolio.py            | compatible with old CVXPY                 |
 | ges_interest.py                | interest rate                             |
-| ges_lecture_note1.pdf          | lecture note (fixed income instruments)   |
-| ges_lecture_note2.pdf          | lecture note (portfolio management)       |
 | ges_min_tracking_error_ver1.py | tracking-error minimization               |
 | ges_min_tracking_error.py      | compatible with old CVXPY                 |
 | ges_mvf_example1.py            | mean-variance portfolio                   |
