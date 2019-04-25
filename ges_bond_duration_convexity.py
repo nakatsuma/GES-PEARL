@@ -5,14 +5,14 @@ import matplotlib.pyplot as plt
 
 def Bond_Price(Yield, Maturity, CouponRate, FaceValue):
     Coupon = 0.01 * CouponRate * FaceValue
-    CF = np.r_[0.0, np.tile(Coupon, int(Maturity) - 1), FaceValue + Coupon]
+    CF = np.hstack((0.0, np.tile(Coupon, int(Maturity) - 1), FaceValue + Coupon))
     return pol.polyval(1.0 / (1.0 + 0.01 * Yield), CF)
 
 
 def Bond_Duration(Yield, Maturity, CouponRate, FaceValue):
     Price = Bond_Price(Yield, Maturity, CouponRate, FaceValue)
     Coupon = 0.01 * CouponRate * FaceValue
-    CF = np.r_[np.tile(Coupon, int(Maturity) - 1), Coupon + FaceValue]
+    CF = np.hstack((np.tile(Coupon, int(Maturity) - 1), Coupon + FaceValue))
     Coef = np.linspace(1, Maturity, Maturity) * CF
     return pol.polyval(1.0 / (1.0 + 0.01 * Yield), np.r_[0.0, Coef]) / Price
 
@@ -21,7 +21,7 @@ def Bond_Convexity(Yield, Maturity, CouponRate, FaceValue):
     Price = Bond_Price(Yield, Maturity, CouponRate, FaceValue)
     Duration = Bond_Duration(Yield, Maturity, CouponRate, FaceValue)
     Coupon = 0.01 * CouponRate * FaceValue
-    CF = np.r_[np.tile(Coupon, int(Maturity) - 1), Coupon + FaceValue]
+    CF = np.hstack((np.tile(Coupon, int(Maturity) - 1), Coupon + FaceValue))
     Coef = (np.linspace(1, Maturity, Maturity) - Duration)**2 * CF
     Dispersion = pol.polyval(1.0 / (1.0 + 0.01 * Yield), np.r_[0.0, Coef]) \
                  / Price
@@ -44,7 +44,7 @@ plt.axhline(1, color='k', linestyle=':', linewidth=0.5)
 plt.axvline(5, ymin=0, ymax=0.8, color='k', linestyle=':', linewidth=0.5)
 plt.xlabel('yield')
 plt.ylabel('price')
-Legend_A = 'bond A (D ={0:8.4f}，C ={1:8.4f})'.format(D_A, C_A)
-Legend_B = 'bond B (D ={0:8.4f}，C ={1:8.4f})'.format(D_B, C_B)
+Legend_A = 'bond A (D ={0:8.4f}, C ={1:8.4f})'.format(D_A, C_A)
+Legend_B = 'bond B (D ={0:8.4f}, C ={1:8.4f})'.format(D_B, C_B)
 plt.legend([Legend_A, Legend_B], loc='best', frameon=False)
 plt.show()

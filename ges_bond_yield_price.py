@@ -5,7 +5,7 @@ import matplotlib.pyplot as plt
 
 def Bond_Yield(Price, Maturity, CouponRate, FaceValue):
     Coupon = 0.01 * CouponRate * FaceValue
-    CF = np.r_[-Price, np.tile(Coupon, int(Maturity) - 1), FaceValue + Coupon]
+    CF = np.hstack((-Price, np.tile(Coupon, int(Maturity) - 1), FaceValue + Coupon))
     Roots = pol.polyroots(CF)
     Real = np.real(Roots[np.isreal(Roots)])
     Positive = np.asscalar(Real[Real > 0.0])
@@ -14,7 +14,7 @@ def Bond_Yield(Price, Maturity, CouponRate, FaceValue):
 
 def Bond_Price(Yield, Maturity, CouponRate, FaceValue):
     Coupon = 0.01 * CouponRate * FaceValue
-    CF = np.r_[0.0, np.tile(Coupon, int(Maturity) - 1), FaceValue + Coupon]
+    CF = np.hstack((0.0, np.tile(Coupon, int(Maturity) - 1), FaceValue + Coupon))
     return pol.polyval(1.0 / (1.0 + 0.01 * Yield), CF)
 
 
