@@ -78,7 +78,18 @@ Your default browser will pop up. Click the `Python (Finance)` button to create 
 
 ---
 
-## Python codes and related files
+## Jupyter Notebooks and related files in `notebook`
+
+| file name | description |
+|:-------------------------------|:------------------------------------------|
+| ges_bond.ipynb                 | yield, duration and convexity of bond     |
+| ges_interst.ipynb              | interest rate                             |
+| ges_npv_irr.ipynb              | present value, internal rate of return    |
+| ges_portfolio.ipynb            | introduction to portfolio analysis        |
+
+---
+
+## Python codes and related files in `python`
 
 | file name | description |
 |:-------------------------------|:------------------------------------------|
@@ -107,3 +118,5 @@ Your default browser will pop up. Click the `Python (Finance)` button to create 
 | ges_risk_parity.py             | risk parity portfolio                     |
 | ges_sv_portfolio_ver1.py       | semivariance portfolio                    |
 | ges_sv_portfolio.py            | compatible with old CVXPY                 |
+
+---
