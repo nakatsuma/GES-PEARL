@@ -8,12 +8,12 @@ CorrMatrix = np.array([[1.00, 0.25, 0.18, 0.10, 0.25],
                        [0.18, 0.36, 1.00, 0.25, 0.36],
                        [0.10, 0.20, 0.25, 1.00, 0.45],
                        [0.25, 0.20, 0.36, 0.45, 1.00]])
-Sigma = np.diag(Stdev).dot(CorrMatrix).dot(np.diag(Stdev))
+Sigma = np.diag(Stdev) @ CorrMatrix @ np.diag(Stdev)
 iota = np.ones(Mu.shape)
 inv_Sigma = la.inv(Sigma)
-A = Mu.dot(inv_Sigma).dot(iota)
-B = Mu.dot(inv_Sigma).dot(Mu)
-C = iota.dot(inv_Sigma).dot(iota)
+A = Mu @ inv_Sigma @ iota
+B = Mu @ inv_Sigma @ Mu
+C = iota @ inv_Sigma @ iota
 D = B * C - A ** 2
 V_Target = np.linspace(Mu.min(), Mu.max(), num=5)
 V_Risk = np.zeros(V_Target.shape)

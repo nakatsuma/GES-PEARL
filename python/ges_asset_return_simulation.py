@@ -8,7 +8,7 @@ CorrMatrix = np.array([[1.00, 0.25, 0.18, 0.10, 0.25],
                        [0.18, 0.36, 1.00, 0.25, 0.36],
                        [0.10, 0.20, 0.25, 1.00, 0.45],
                        [0.25, 0.20, 0.36, 0.45, 1.00]])
-Sigma = np.diag(Stdev).dot(CorrMatrix).dot(np.diag(Stdev))
+Sigma = np.diag(Stdev) @ CorrMatrix @ np.diag(Stdev)
 np.random.seed(9999)
 T = 120
 End_of_Month = pd.date_range('1/1/2007', periods=T, freq='M')
