@@ -12,9 +12,9 @@ Sigma = np.diag(Stdev) @ CorrMatrix @ np.diag(Stdev)
 iota = np.ones(Mu.shape)
 inv_Sigma = la.inv(Sigma)
 Weight_1N = np.tile(1.0/Mu.shape[0], Mu.shape[0])
-Weight_MV = inv_Sigma.dot(iota) / iota.dot(inv_Sigma).dot(iota)
-Weight_MD = inv_Sigma.dot(Stdev) / iota.dot(inv_Sigma).dot(Stdev)
-F = lambda v, Sigma: np.r_[Sigma.dot(v[:-1])-v[-1]/v[:-1], v[:-1].sum()-1.0]
-Weight_RP = opt.root(F, np.r_[Weight_1N, 0.0], args=Sigma).x[:-1]
+Weight_MV = inv_Sigma @ iota / (iota @ inv_Sigma @ iota)
+Weight_MD = inv_Sigma @ Stdev / (iota @ inv_Sigma @ Stdev)
+F = lambda v, Sigma: np.hstack((Sigma @ v[:-1] - v[-1]/v[:-1], v[:-1].sum() - 1.0))
+Weight_RP = opt.root(F, np.hstack((Weight_1N, 0.0)), args=Sigma).x[:-1]
 np.set_printoptions(formatter={'float': '{:7.2f}'.format})
-print(np.c_[Weight_1N, Weight_MV, Weight_RP, Weight_MD]*100)
+print(np.vstack((Weight_1N, Weight_MV, Weight_RP, Weight_MD))*100)
