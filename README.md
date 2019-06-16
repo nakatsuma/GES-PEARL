@@ -1,8 +1,19 @@
-# GES-PEARL
+# GES-PEARL <!-- omit in toc -->
 
-## Course materials for GENERAL EDUCATION SEMINAR (PEARL)
+## Course materials for GENERAL EDUCATION SEMINAR (PEARL) <!-- omit in toc -->
 
 Teruo Nakatsuma (Faculty of Economics, Keio University, Japan)
+
+---
+
+- [How to set up Python and necessary packages](#how-to-set-up-python-and-necessary-packages)
+  - [Step 1: Installing Anaconda](#step-1-installing-anaconda)
+  - [Step 2: Creating an environment](#step-2-creating-an-environment)
+    - [Windows](#windows)
+    - [macOS and Linux](#macos-and-linux)
+- [How to start JupyterLab](#how-to-start-jupyterlab)
+- [Jupyter Notebooks and related files in `notebook`](#jupyter-notebooks-and-related-files-in-notebook)
+- [Python codes and related files in `python`](#python-codes-and-related-files-in-python)
 
 ---
 
