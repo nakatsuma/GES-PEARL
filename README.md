@@ -6,14 +6,14 @@ Teruo Nakatsuma (Faculty of Economics, Keio University, Japan)
 
 ---
 
-- [How to set up Python and necessary packages](#how-to-set-up-python-and-necessary-packages)
-  - [Step 1: Installing Anaconda](#step-1-installing-anaconda)
-  - [Step 2: Creating an environment](#step-2-creating-an-environment)
-    - [Windows](#windows)
-    - [macOS and Linux](#macos-and-linux)
-- [How to start JupyterLab](#how-to-start-jupyterlab)
-- [Jupyter Notebooks and related files in `notebook`](#jupyter-notebooks-and-related-files-in-notebook)
-- [Python codes and related files in `python`](#python-codes-and-related-files-in-python)
+- [How to set up Python and necessary packages](#How-to-set-up-Python-and-necessary-packages)
+  - [Step 1: Installing Anaconda](#Step-1-Installing-Anaconda)
+  - [Step 2: Creating an environment](#Step-2-Creating-an-environment)
+    - [Windows](#Windows)
+    - [macOS and Linux](#macOS-and-Linux)
+- [How to start JupyterLab](#How-to-start-JupyterLab)
+- [Jupyter Notebooks and related files in `notebook`](#Jupyter-Notebooks-and-related-files-in-notebook)
+- [Python codes and related files in `python`](#Python-codes-and-related-files-in-python)
 
 ---
 
@@ -92,46 +92,49 @@ Your default browser will pop up. Click the `Python (Finance)` button to create 
 ## Jupyter Notebooks and related files in `notebook`
 
 | file name | description |
-|:-------------------------------|:------------------------------------------|
-| ges_alt_risk.ipynb             | portfolio with alternative risk measures  |
-| ges_bond.ipynb                 | yield, duration and convexity of bond     |
-| ges_interst.ipynb              | interest rate                             |
-| ges_mvf_sample.ipynb           | mean-variance portfolio with data         |
-| ges_mvf.ipynb                  | mean-variance portfolio                   |
-| ges_npv_irr.ipynb              | present value, internal rate of return    |
-| ges_portfolio.ipynb            | introduction to portfolio analysis        |
-| ges_shortselling.py            | mean-variance portfolio w/o short selling |
+|:-------------------------------|:-------------------------------------------|
+| ges_alt_risk.ipynb             | portfolio with alternative risk measures   |
+| ges_bond.ipynb                 | yield, duration and convexity of bond      |
+| ges_interst.ipynb              | interest rate                              |
+| ges_mvf_riskfree.ipynb         | mean-variance portfolio w/ risk-free asset |
+| ges_mvf_sample.ipynb           | mean-variance portfolio with data          |
+| ges_mvf.ipynb                  | mean-variance portfolio                    |
+| ges_npv_irr.ipynb              | present value, internal rate of return     |
+| ges_portfolio.ipynb            | introduction to portfolio analysis         |
+| ges_riskparity.ipybn           | risk parity portfolio                      |
+| ges_shortselling.py            | mean-variance portfolio w/o short selling  |
+| stock_market_cap.csv           | market capitalization data                 |
 
 ---
 
 ## Python codes and related files in `python`
 
 | file name | description |
-|:-------------------------------|:------------------------------------------|
-| asset_return_data.csv          | simulated asset returns                   |
-| capm.csv                       | market capitalization data                |
-| ges_ad_portfolio_ver1.py       | mean absolute deviation portfolio         |
-| ges_ad_portfolio.py            | compatible with old CVXPY                 |
-| ges_asset_return_simulation.py | simulation of asset returns               |
-| ges_black_scholes.py           | Black-Scholes formula for option pricing  |
-| ges_bond_duration_convexity.py | duration and convexity of bond            |
-| ges_bond_yield_curve.py        | yield curve of bond                       |
-| ges_bond_yield_price.py        | price-yield relationship                  |
-| ges_capm.py                    | CAPM beta estimation                      |
-| ges_es_portfolio_ver1.py       | expected shortfall portfolio              |
-| ges_es_portfolio.py            | compatible with old CVXPY                 |
-| ges_interest.py                | interest rate                             |
-| ges_min_tracking_error_ver1.py | tracking-error minimization               |
-| ges_min_tracking_error.py      | compatible with old CVXPY                 |
-| ges_mvf_example1.py            | mean-variance portfolio                   |
-| ges_mvf_example2_ver1.py       | mean-variance portfolio w/o short selling |
-| ges_mvf_example2.py            | compatible with old CVXPY                 |
-| ges_mvf_example3_ver1.py       | mean-variance portfolio with data         |
-| ges_mvf_example3.py            | compatible with old CVXPY                 |
-| ges_npv_irr.py                 | present value, internal rate of return    |
-| ges_option_pricing.py          | option pricing with binomial tree model   |
-| ges_risk_parity.py             | risk parity portfolio                     |
-| ges_sv_portfolio_ver1.py       | semivariance portfolio                    |
-| ges_sv_portfolio.py            | compatible with old CVXPY                 |
+|:-------------------------------|:-------------------------------------------|
+| asset_return_data.csv          | simulated asset returns                    |
+| capm.csv                       | market capitalization data                 |
+| ges_ad_portfolio_ver1.py       | mean absolute deviation portfolio          |
+| ges_ad_portfolio.py            | compatible with old CVXPY                  |
+| ges_asset_return_simulation.py | simulation of asset returns                |
+| ges_black_scholes.py           | Black-Scholes formula for option pricing   |
+| ges_bond_duration_convexity.py | duration and convexity of bond             |
+| ges_bond_yield_curve.py        | yield curve of bond                        |
+| ges_bond_yield_price.py        | price-yield relationship                   |
+| ges_capm.py                    | CAPM beta estimation                       |
+| ges_es_portfolio_ver1.py       | expected shortfall portfolio               |
+| ges_es_portfolio.py            | compatible with old CVXPY                  |
+| ges_interest.py                | interest rate                              |
+| ges_min_tracking_error_ver1.py | tracking-error minimization                |
+| ges_min_tracking_error.py      | compatible with old CVXPY                  |
+| ges_mvf_example1.py            | mean-variance portfolio                    |
+| ges_mvf_example2_ver1.py       | mean-variance portfolio w/o short selling  |
+| ges_mvf_example2.py            | compatible with old CVXPY                  |
+| ges_mvf_example3_ver1.py       | mean-variance portfolio with data          |
+| ges_mvf_example3.py            | compatible with old CVXPY                  |
+| ges_npv_irr.py                 | present value, internal rate of return     |
+| ges_option_pricing.py          | option pricing with binomial tree model    |
+| ges_risk_parity.py             | risk parity portfolio                      |
+| ges_sv_portfolio_ver1.py       | semivariance portfolio                     |
+| ges_sv_portfolio.py            | compatible with old CVXPY                  |
 
 ---
