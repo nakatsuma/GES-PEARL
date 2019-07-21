@@ -14,7 +14,7 @@ def Bond_Duration(Yield, Maturity, CouponRate, FaceValue):
     Coupon = 0.01 * CouponRate * FaceValue
     CF = np.hstack((np.tile(Coupon, int(Maturity) - 1), Coupon + FaceValue))
     Coef = np.linspace(1, Maturity, Maturity) * CF
-    return pol.polyval(1.0 / (1.0 + 0.01 * Yield), np.r_[0.0, Coef]) / Price
+    return pol.polyval(1.0 / (1.0 + 0.01 * Yield), np.hstack((0.0, Coef))) / Price
 
 
 def Bond_Convexity(Yield, Maturity, CouponRate, FaceValue):
@@ -23,7 +23,7 @@ def Bond_Convexity(Yield, Maturity, CouponRate, FaceValue):
     Coupon = 0.01 * CouponRate * FaceValue
     CF = np.hstack((np.tile(Coupon, int(Maturity) - 1), Coupon + FaceValue))
     Coef = (np.linspace(1, Maturity, Maturity) - Duration)**2 * CF
-    Dispersion = pol.polyval(1.0 / (1.0 + 0.01 * Yield), np.r_[0.0, Coef]) \
+    Dispersion = pol.polyval(1.0 / (1.0 + 0.01 * Yield), np.hstack((0.0, Coef))) \
                  / Price
     return (Dispersion + (1.0 + Duration) * Duration) / (1.0 + 0.01 * Yield)**2
 
