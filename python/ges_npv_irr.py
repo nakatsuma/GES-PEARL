@@ -11,7 +11,7 @@ def NPV(r, CF):
 def IRR(CF):
     Roots = pol.polyroots(CF)
     Real = np.real(Roots[np.isreal(Roots)])
-    Positive = np.asscalar(Real[Real > 0.0])
+    Positive = (Real[Real > 0.0]).item(0)
     return (1.0 / Positive - 1.0) * 100
 
 
