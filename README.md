@@ -8,10 +8,11 @@ Teruo Nakatsuma (Faculty of Economics, Keio University, Japan)
 
 - [How to set up Python and necessary packages](#how-to-set-up-python-and-necessary-packages)
   - [Step 1: Installing Anaconda](#step-1-installing-anaconda)
-  - [Step 2: Creating an environment](#step-2-creating-an-environment)
-    - [Windows](#windows)
-    - [macOS and Linux](#macos-and-linux)
+  - [Step 2: (Windows only) Installing Microsoft Visual Studio Build Tools](#step-2-windows-only-installing-microsoft-visual-studio-build-tools)
+  - [Step 3: Creating an environment](#step-3-creating-an-environment)
 - [How to start JupyterLab](#how-to-start-jupyterlab)
+  - [Method 1: From the command line](#method-1-from-the-command-line)
+  - [Method 2: From Anaconda Navigator](#method-2-from-anaconda-navigator)
 - [Jupyter Notebooks and related files in `notebook`](#jupyter-notebooks-and-related-files-in-notebook)
 - [Python codes and related files in `python`](#python-codes-and-related-files-in-python)
 
@@ -29,7 +30,13 @@ I strongly recommend using [Anaconda](https://www.anaconda.com/). It can install
 
 3. Doubleclick the installer and follow the instructions on the screen. Do not change the default settings.
 
-### Step 2: Creating an environment
+### Step 2: (Windows only) Installing Microsoft Visual Studio Build Tools
+
+1. Download the installer for Microsoft Visual Studio Build Tools from [here](https://visualstudio.microsoft.com/thank-you-downloading-visual-studio/?sku=BuildTools&rel=16).
+
+2. Doubleclick the installer and follow the instructions on the screen. It is sufficient to install `C++ build tools`. See [this link](https://drive.google.com/file/d/0B4GsMXCRaSSIOWpYQkstajlYZ0tPVkNQSElmTWh1dXFaYkJr/view?usp=sharing) for the install instructions.
+
+### Step 3: Creating an environment
 
 Start `Anaconda Powershell Prompt` (Windows) or `Terminal` (macOS, Linux) and type
 
@@ -39,19 +46,11 @@ Start `Anaconda Powershell Prompt` (Windows) or `Terminal` (macOS, Linux) and ty
 
 This will update conda (package manager) in Anaconda. Then type
 
-#### Windows
-
 ```IPython
-(base) PS C:\Users\Thomas> conda create -n finance python=3.6 jupyterlab seaborn spyder cvxgrp::cvxpy
+(base) PS C:\Users\Thomas> conda create -n finance jupyterlab seaborn spyder
 ```
 
-#### macOS and Linux
-
-```IPython
-(base) Bayes:~ Thomas$ conda create -n finance jupyterlab seaborn spyder conda-forge::cvxpy
-```
-
-Then type
+This will create a new enviromnemt named `finance`. Then type
 
 ```IPython
 (base) PS C:\Users\Thomas> conda activate finance
@@ -63,6 +62,12 @@ You will notice that the prompt is altered as
 (finance) PS C:\Users\Thomas>
 ```
 
+To install CVXPY, type
+
+```IPython
+(finance) PS C:\Users\Thomas> pip install cvxpy
+```
+
 Finally type
 
 ```IPython
@@ -71,11 +76,29 @@ Finally type
 
 Now you are ready for Python!
 
-**WARNING: The version of CVXPY installed with the above setup is 0.4 for Windows while it is 1.0 for macOS and Linux.**
-
 ---
 
 ## How to start JupyterLab
+
+### Method 1: From the command line
+
+Start `Anaconda Powershell Prompt` (Windows) or `Terminal` (macOS, Linux) and type
+
+```IPython
+(base) PS C:\Users\Thomas> conda activate finance
+```
+
+Then type
+
+```IPython
+(finance) PS C:\Users\Thomas> jupyter lab
+```
+
+Your default browser will pop up. Click the `Python (Finance)` button to create a Jupyter notebook.
+
+![Anaconda Navigator](Screenshot-JupyterLab.png)
+
+### Method 2: From Anaconda Navigator
 
 Start `Anaconda Navigator`. You may find it in `Start Menu` (Windows) or `Launchpad` (macOS). Alternatively you just type
 
@@ -88,10 +111,6 @@ in `Anaconda Powershell Prompt` (Windows) or `Terminal` (macOS, Linux).
 Click the `Launch` button in the `JupyterLab` panel.
 
 ![Anaconda Navigator](Screenshot-AnacondaNavigator.png)
-
-Your default browser will pop up. Click the `Python (Finance)` button to create a Jupyter notebook.
-
-![Anaconda Navigator](Screenshot-JupyterLab.png)
 
 ---
 
