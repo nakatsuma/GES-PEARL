@@ -118,6 +118,8 @@ Click the `Launch` button in the `JupyterLab` panel.
 
 | file name | description |
 |:-------------------------------|:-------------------------------------------|
+| asset_return_data.csv          | simulated asset returns                    |
+| capm.csv                       | market capitalization data                 |
 | ges_alt_risk.ipynb             | portfolio with alternative risk measures   |
 | ges_bond.ipynb                 | yield, duration and convexity of bond      |
 | ges_interst.ipynb              | interest rate                              |
@@ -128,6 +130,7 @@ Click the `Launch` button in the `JupyterLab` panel.
 | ges_portfolio.ipynb            | introduction to portfolio analysis         |
 | ges_riskparity.ipybn           | risk parity portfolio                      |
 | ges_shortselling.py            | mean-variance portfolio w/o short selling  |
+| ges_tracking_error.py          | traking error minimization problem         |
 | stock_market_cap.csv           | market capitalization data                 |
 
 ---
