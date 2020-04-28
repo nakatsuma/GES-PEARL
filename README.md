@@ -11,8 +11,8 @@ Teruo Nakatsuma (Faculty of Economics, Keio University, Japan)
   - [Step 2: (Windows only) Installing Microsoft Visual Studio Build Tools](#step-2-windows-only-installing-microsoft-visual-studio-build-tools)
   - [Step 3: Creating an environment](#step-3-creating-an-environment)
 - [How to start JupyterLab](#how-to-start-jupyterlab)
-  - [Method 1: From the command line](#method-1-from-the-command-line)
   - [Method 2: From Anaconda Navigator](#method-2-from-anaconda-navigator)
+- [-->](#)
 - [Jupyter Notebooks and related files in `notebook`](#jupyter-notebooks-and-related-files-in-notebook)
 - [Python codes and related files in `python`](#python-codes-and-related-files-in-python)
 
@@ -47,7 +47,7 @@ Start `Anaconda Powershell Prompt` (Windows) or `Terminal` (macOS, Linux) and ty
 This will update conda (package manager) in Anaconda. Then type
 
 ```IPython
-(base) PS C:\Users\Thomas> conda create -n finance jupyterlab seaborn spyder
+(base) PS C:\Users\Thomas> conda create -n finance python=3.7 jupyterlab seaborn spyder nodejs nose
 ```
 
 This will create a new enviromnemt named `finance`. Then type
@@ -68,7 +68,11 @@ To install CVXPY, type
 (finance) PS C:\Users\Thomas> pip install cvxpy
 ```
 
-Finally type
+To check whether CVXPY is installed without errors, type
+```IPython
+(finance) PS C:\Users\Thomas> nosetests cvxpy
+```
+If no error message appears, CVXPY is properly installed. Finally type
 
 ```IPython
 (finance) PS C:\Users\Thomas> python -m ipykernel install --user --name finance --display-name "Python (Finance)"
@@ -80,7 +84,9 @@ Now you are ready for Python!
 
 ## How to start JupyterLab
 
+<!---
 ### Method 1: From the command line
+-->
 
 Start `Anaconda Powershell Prompt` (Windows) or `Terminal` (macOS, Linux) and type
 
@@ -98,6 +104,7 @@ Your default browser will pop up. Click the `Python (Finance)` button to create 
 
 ![Anaconda Navigator](Screenshot-JupyterLab.png)
 
+<!---
 ### Method 2: From Anaconda Navigator
 
 Start `Anaconda Navigator`. You may find it in `Start Menu` (Windows) or `Launchpad` (macOS). Alternatively you just type
@@ -111,7 +118,7 @@ in `Anaconda Powershell Prompt` (Windows) or `Terminal` (macOS, Linux).
 Click the `Launch` button in the `JupyterLab` panel.
 
 ![Anaconda Navigator](Screenshot-AnacondaNavigator.png)
-
+-->
 ---
 
 ## Jupyter Notebooks and related files in `notebook`
