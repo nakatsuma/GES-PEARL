@@ -11,8 +11,6 @@ Teruo Nakatsuma (Faculty of Economics, Keio University, Japan)
   - [Step 2: (Windows only) Installing Microsoft Visual Studio Build Tools](#step-2-windows-only-installing-microsoft-visual-studio-build-tools)
   - [Step 3: Creating an environment](#step-3-creating-an-environment)
 - [How to start JupyterLab](#how-to-start-jupyterlab)
-  - [Method 2: From Anaconda Navigator](#method-2-from-anaconda-navigator)
-- [-->](#)
 - [Jupyter Notebooks and related files in `notebook`](#jupyter-notebooks-and-related-files-in-notebook)
 - [Python codes and related files in `python`](#python-codes-and-related-files-in-python)
 
@@ -90,10 +88,6 @@ Now you are ready for Python!
 
 ## How to start JupyterLab
 
-<!---
-### Method 1: From the command line
--->
-
 Start `Anaconda Powershell Prompt` (Windows) or `Terminal` (macOS, Linux) and type
 
 ```IPython
@@ -125,6 +119,7 @@ Click the `Launch` button in the `JupyterLab` panel.
 
 ![Anaconda Navigator](Screenshot-AnacondaNavigator.png)
 -->
+
 ---
 
 ## Jupyter Notebooks and related files in `notebook`
