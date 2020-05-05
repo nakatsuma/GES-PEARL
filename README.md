@@ -69,10 +69,16 @@ To install CVXPY, type
 ```
 
 To check whether CVXPY is installed without errors, type
+
 ```IPython
 (finance) PS C:\Users\Thomas> nosetests cvxpy
 ```
-If no error message appears, CVXPY is properly installed. Finally type
+
+If no error message appears, CVXPY is properly installed.
+
+Note: You may encounter some error messages in Windows, but they seem harmless.
+
+Finally type
 
 ```IPython
 (finance) PS C:\Users\Thomas> python -m ipykernel install --user --name finance --display-name "Python (Finance)"
