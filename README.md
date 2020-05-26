@@ -131,13 +131,11 @@ Click the `Launch` button in the `JupyterLab` panel.
 | ges_alt_risk.ipynb             | portfolio with alternative risk measures   |
 | ges_bond.ipynb                 | yield, duration and convexity of bond      |
 | ges_interst.ipynb              | interest rate                              |
-| ges_mvf_riskfree.ipynb         | mean-variance portfolio w/ risk-free asset |
-| ges_mvf_sample.ipynb           | mean-variance portfolio with data          |
 | ges_mvf.ipynb                  | mean-variance portfolio                    |
+| ges_mvf_sample.ipynb           | mean-variance portfolio with data          |
 | ges_npv_irr.ipynb              | present value, internal rate of return     |
 | ges_portfolio.ipynb            | introduction to portfolio analysis         |
 | ges_riskparity.ipybn           | risk parity portfolio                      |
-| ges_shortselling.py            | mean-variance portfolio w/o short selling  |
 | ges_tracking_error.py          | traking error minimization problem         |
 | stock_market_cap.csv           | market capitalization data                 |
 
