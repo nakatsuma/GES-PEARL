@@ -21,10 +21,10 @@ for Month in range(0, BackTesting):
     Asset = Asset_srT.values[Month:(Month + MovingWindow), :]
     Index = Index_srT.values[Month:(Month + MovingWindow)]
     Min_TrackingError = cp.Problem(cp.Minimize(TrackingError),
-                                   [Index - Asset*Weight == Error,
-                                    cp.sum_entries(Weight) == 1.0,
+                                   [Index - Asset @ Weight == Error,
+                                    cp.sum(Weight) == 1.0,
                                     Weight >= 0.0])
-    Min_TrackingError.solve()
+    Min_TrackingError.solve(solver=cp.ECOS)
     V_Tracking[Month] = R.values[Month + MovingWindow, :].dot(Weight.value)
 fig1 = plt.figure(num=1, facecolor='w')
 plt.plot(list(range(1, BackTesting + 1)), BenchmarkIndex[MovingWindow:], 'b-')

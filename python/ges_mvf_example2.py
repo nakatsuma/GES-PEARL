@@ -17,17 +17,17 @@ B = Mu @ inv_Sigma @ Mu
 C = iota @ inv_Sigma @ iota
 D = B * C - A ** 2
 Weight = cp.Variable(Mu.shape[0])
-Target_Return = cp.Parameter(sign='positive')
+Target_Return = cp.Parameter(nonneg=True)
 Risk_Variance = cp.quad_form(Weight, Sigma)
 Opt_Portfolio = cp.Problem(cp.Minimize(Risk_Variance),
-                           [Weight.T*Mu == Target_Return,
-                            cp.sum_entries(Weight) == 1.0,
+                           [Weight.T @ Mu == Target_Return,
+                            cp.sum(Weight) == 1.0,
                             Weight >= 0.0])
 V_Target = np.linspace(Mu.min(), Mu.max(), num=250)
 V_Risk = np.zeros(V_Target.shape)
 V_Weight = np.zeros((V_Target.shape[0], Mu.shape[0]))
 for idx, Target_Return.value in enumerate(V_Target):
-    Opt_Portfolio.solve()
+    Opt_Portfolio.solve(solver=cp.ECOS)
     V_Weight[idx, :] = Weight.value.T
     V_Risk[idx] = np.sqrt(Risk_Variance.value)
 sigma_gmv = 1.0 / np.sqrt(C)
