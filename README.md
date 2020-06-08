@@ -8,7 +8,9 @@ Teruo Nakatsuma (Faculty of Economics, Keio University, Japan)
 
 - [How to set up Python and necessary packages](#how-to-set-up-python-and-necessary-packages)
   - [Step 1: Installing Anaconda](#step-1-installing-anaconda)
-  - [Step 2: (Windows only) Installing Microsoft Visual Studio Build Tools](#step-2-windows-only-installing-microsoft-visual-studio-build-tools)
+  - [Step 2: Installing Additional Tools](#step-2-installing-additional-tools)
+    - [(Windows) Installing Microsoft Visual Studio Build Tools](#windows-installing-microsoft-visual-studio-build-tools)
+    - [(macOS) Installing Command Line Tools for Xcode](#macos-installing-command-line-tools-for-xcode)
   - [Step 3: Creating an environment](#step-3-creating-an-environment)
 - [How to start JupyterLab](#how-to-start-jupyterlab)
 - [Jupyter Notebooks and related files in `notebook`](#jupyter-notebooks-and-related-files-in-notebook)
@@ -28,11 +30,25 @@ I strongly recommend using [Anaconda](https://www.anaconda.com/). It can install
 
 3. Doubleclick the installer and follow the instructions on the screen. Do not change the default settings.
 
-### Step 2: (Windows only) Installing Microsoft Visual Studio Build Tools
+### Step 2: Installing Additional Tools
 
-1. Download the installer for Microsoft Visual Studio Build Tools from [here](https://visualstudio.microsoft.com/thank-you-downloading-visual-studio/?sku=BuildTools&rel=16).
+#### (Windows) Installing Microsoft Visual Studio Build Tools
+
+1. Download the installer for `Microsoft Visual Studio Build Tools` from [here](https://visualstudio.microsoft.com/thank-you-downloading-visual-studio/?sku=BuildTools&rel=16).
 
 2. Doubleclick the installer and follow the instructions on the screen. It is sufficient to install `C++ build tools`. See [this link](https://drive.google.com/file/d/0B4GsMXCRaSSIOWpYQkstajlYZ0tPVkNQSElmTWh1dXFaYkJr/view?usp=sharing) for the install instructions.
+
+#### (macOS) Installing Command Line Tools for Xcode
+
+1. Install `Xcode` from App Store.
+
+2. Start `Xcode`. If a pop-up window asks you to install additional tools, follow the instruction. Quit `Xcode`.
+
+3. Start `Terminal` and install `Command Line Tools for Xcode` by typing
+
+``` IPython
+(base) MacBook-Pro :~ Thomas% sudo xcode-select --install
+```
 
 ### Step 3: Creating an environment
 
