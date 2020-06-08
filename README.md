@@ -12,6 +12,7 @@ Teruo Nakatsuma (Faculty of Economics, Keio University, Japan)
     - [(Windows) Installing Microsoft Visual Studio Build Tools](#windows-installing-microsoft-visual-studio-build-tools)
     - [(macOS) Installing Command Line Tools for Xcode](#macos-installing-command-line-tools-for-xcode)
   - [Step 3: Creating an environment](#step-3-creating-an-environment)
+- [Tips for Troubleshooting](#tips-for-troubleshooting)
 - [How to start JupyterLab](#how-to-start-jupyterlab)
 - [Jupyter Notebooks and related files in `notebook`](#jupyter-notebooks-and-related-files-in-notebook)
 - [Python codes and related files in `python`](#python-codes-and-related-files-in-python)
@@ -76,21 +77,21 @@ You will notice that the prompt is altered as
 (finance) PS C:\Users\Thomas>
 ```
 
-To install CVXPY, type
+To install `CVXPY`, type
 
 ```IPython
 (finance) PS C:\Users\Thomas> pip install cvxpy
 ```
 
-To check whether CVXPY is installed without errors, type
+To check whether `CVXPY` is installed without errors, type
 
 ```IPython
 (finance) PS C:\Users\Thomas> nosetests cvxpy
 ```
 
-If no error message appears, CVXPY is properly installed.
+If no error message appears, `CVXPY` is properly installed.
 
-Note: You may encounter some error messages in Windows, but they seem harmless.
+*Note: You may encounter some error messages in Windows, but they seem harmless.*
 
 Finally type
 
@@ -99,6 +100,31 @@ Finally type
 ```
 
 Now you are ready for Python!
+
+---
+
+## Tips for Troubleshooting
+
+If you encounter any errors, go back to the default environment by typing
+
+```IPython
+(finance) PS C:\Users\Thomas> conda deactivate
+```
+
+and remove `finance` by typing
+
+``` IPython
+(base) PS C:\Users\Thomas> conda env remove -n finance
+```
+
+Then retry **Step 3**.
+
+To update existing `CVXPY`, type
+
+``` IPython
+(base) PS C:\Users\Thomas> conda activate finance
+(finance) PS C:\Users\Thomas> pip install --upgrade cvxpy
+```
 
 ---
 
