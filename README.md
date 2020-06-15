@@ -62,7 +62,7 @@ Start `Anaconda Powershell Prompt` (Windows) or `Terminal` (macOS, Linux) and ty
 This will update conda (package manager) in Anaconda. Then type
 
 ```IPython
-(base) PS C:\Users\Thomas> conda create -n finance python=3.7 jupyterlab seaborn spyder nodejs nose
+(base) PS C:\Users\Thomas> conda create -n finance python=3.7 jupyterlab seaborn spyder nose
 ```
 
 This will create a new enviromnemt named `finance`. Then type
