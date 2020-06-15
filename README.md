@@ -105,7 +105,7 @@ Now you are ready for Python!
 
 ## Tips for Troubleshooting
 
-If you encounter any errors, go back to the default environment by typing
+If you encounter any errors during the installation process, go back to the default environment by typing
 
 ```IPython
 (finance) PS C:\Users\Thomas> conda deactivate
