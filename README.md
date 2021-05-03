@@ -62,7 +62,7 @@ Start `Anaconda Powershell Prompt` (Windows) or `Terminal` (macOS, Linux) and ty
 This will update conda (package manager) in Anaconda. Then type
 
 ```IPython
-(base) PS C:\Users\Thomas> conda create -n finance jupyterlab seaborn spyder nose
+(base) PS C:\Users\Thomas> conda create -n finance jupyterlab seaborn spyder
 ```
 
 This will create a new enviromnemt named `finance`. Then type
@@ -82,16 +82,6 @@ To install `CVXPY`, type
 ```IPython
 (finance) PS C:\Users\Thomas> pip install cvxpy
 ```
-
-To check whether `CVXPY` is installed without errors, type
-
-```IPython
-(finance) PS C:\Users\Thomas> nosetests cvxpy
-```
-
-If no error message appears, `CVXPY` is properly installed.
-
-*Note: You may encounter some error messages in Windows, but they seem harmless.*
 
 Finally type
 
