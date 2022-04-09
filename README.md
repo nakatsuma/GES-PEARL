@@ -48,45 +48,49 @@ I strongly recommend using [Anaconda](https://www.anaconda.com/). It can install
 3. Start `Terminal` and install `Command Line Tools for Xcode` by typing
 
 ``` IPython
-(base) MacBook-Pro :~ Thomas% sudo xcode-select --install
+sudo xcode-select --install
 ```
+
+If asked, type your login password.
 
 ### Step 3: Creating an environment
 
 Start `Anaconda Powershell Prompt` (Windows) or `Terminal` (macOS, Linux) and type
 
 ```IPython
-(base) PS C:\Users\Thomas> conda update conda
+conda update conda
 ```
 
 This will update conda (package manager) in Anaconda. Then type
 
 ```IPython
-(base) PS C:\Users\Thomas> conda create -n finance jupyterlab seaborn spyder
+conda create -n finance jupyterlab seaborn
 ```
 
 This will create a new enviromnemt named `finance`. Then type
 
 ```IPython
-(base) PS C:\Users\Thomas> conda activate finance
+conda activate finance
 ```
 
+<!--
 You will notice that the prompt is altered as
 
 ```IPython
 (finance) PS C:\Users\Thomas>
 ```
+-->
 
 To install `CVXPY`, type
 
 ```IPython
-(finance) PS C:\Users\Thomas> pip install cvxpy
+conda install -c conda-forge cvxpy
 ```
 
 Finally type
 
 ```IPython
-(finance) PS C:\Users\Thomas> python -m ipykernel install --user --name finance --display-name "Python (Finance)"
+python -m ipykernel install --user --name finance --display-name "Python (Finance)"
 ```
 
 Now you are ready for Python!
@@ -98,23 +102,25 @@ Now you are ready for Python!
 If you encounter any errors during the installation process, go back to the default environment by typing
 
 ```IPython
-(finance) PS C:\Users\Thomas> conda deactivate
+conda deactivate
 ```
 
 and remove `finance` by typing
 
 ``` IPython
-(base) PS C:\Users\Thomas> conda env remove -n finance
+conda env remove -n finance
 ```
 
 Then retry **Step 3**.
 
+<!--
 To update existing `CVXPY`, type
 
 ``` IPython
-(base) PS C:\Users\Thomas> conda activate finance
-(finance) PS C:\Users\Thomas> pip install --upgrade cvxpy
+conda activate finance
+pip install --upgrade cvxpy
 ```
+-->
 
 ---
 
@@ -123,26 +129,26 @@ To update existing `CVXPY`, type
 Start `Anaconda Powershell Prompt` (Windows) or `Terminal` (macOS, Linux) and type
 
 ```IPython
-(base) PS C:\Users\Thomas> conda activate finance
+conda activate finance
 ```
 
 Then type
 
 ```IPython
-(finance) PS C:\Users\Thomas> jupyter lab
+jupyter lab
 ```
 
 Your default browser will pop up. Click the `Python (Finance)` button to create a Jupyter notebook.
 
 ![Anaconda Navigator](Screenshot-JupyterLab.png)
 
-<!---
+<!--
 ### Method 2: From Anaconda Navigator
 
 Start `Anaconda Navigator`. You may find it in `Start Menu` (Windows) or `Launchpad` (macOS). Alternatively you just type
 
 ```IPython
-(base) PS C:\Users\Thomas> anaconda-navigator
+anaconda-navigator
 ```
 
 in `Anaconda Powershell Prompt` (Windows) or `Terminal` (macOS, Linux).
